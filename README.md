@@ -5,20 +5,20 @@
 
 
 
-## Various Model Explainers -
+## Various Model Explainers - Derek
 
 
 
 
 
-## What is a model explainer? - 
+## What is a model explainer? - James
 
 
 
 
 
 
-## What does the information mean that the model explainer gives us?
+## What does the information mean that the model explainer gives us? - Ammon 
 
 
 
