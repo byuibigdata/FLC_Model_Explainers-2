@@ -34,7 +34,7 @@ ELI5 (Explain like I'm 5) is a model explainer that can
 
 
 
-## What does the information mean that the model explainer gives us? - Ammon 
+## What does the information mean that the model explainer gives us? - Richard
 
 This information allows us to see inside the Blackbox of what a ML model is doing.
 
