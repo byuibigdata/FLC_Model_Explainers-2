@@ -45,12 +45,13 @@ ELI5 (Explain like I'm 5) is a model explainer that can
 
 
 
-# 2 Model Explainer Example Tanner
+# 2 Model Explainer Example Tanner 
 
 
 
 
-# 3 Model Explainer Example
+# 3 Model Explainer Example Derek LIME
+
 
 
 
