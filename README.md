@@ -22,6 +22,14 @@ Is the model more complicated than it needs to be?
 
 
 
+## What does the information mean that the model explainer gives us? - Richard
+
+This information allows us to see inside the Blackbox of what a ML model is doing.
+
+
+
+
+
 ## Various Model Explainers - Derek
 
 https://www.analyticsvidhya.com/blog/2020/03/6-python-libraries-interpret-machine-learning-models/
@@ -34,11 +42,6 @@ ELI5 (Explain like I'm 5) is a model explainer that can
 
 
 
-## What does the information mean that the model explainer gives us? - Richard
-
-This information allows us to see inside the Blackbox of what a ML model is doing.
-
-
 
 
 
@@ -47,7 +50,3 @@ This information allows us to see inside the Blackbox of what a ML model is doin
 
 
 
-
-
-
-##
