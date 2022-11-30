@@ -60,3 +60,11 @@ ELI5 (Explain like I'm 5) is a model explainer that can
 
 
 
+resources: 
+https://www.kaggle.com/code/dansbecker/advanced-uses-of-shap-values/tutorial
+https://medium.com/analytics-vidhya/explain-ml-models-shap-library-5ce375c85d7d
+https://www.kaggle.com/code/scratchpad/notebook616777f210/edit
+https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.mllib.tree.GradientBoostedTrees.html
+https://interpret.ml/docs/lime.html
+https://github.com/TeamHG-Memex/eli5
+
