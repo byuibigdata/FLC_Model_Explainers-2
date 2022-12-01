@@ -54,6 +54,11 @@ ELI5 (Explain like I'm 5) is a model explainer that can
 
 
 
+# Amazing dashboarding for model explainers
+
+https://titanicexplainer.herokuapp.com/classifier/
+
+
 
 
 ## (If you have another question that you want to research add it here or below)
