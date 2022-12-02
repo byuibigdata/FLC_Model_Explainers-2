@@ -38,7 +38,59 @@ Depending on the project that you are working on, different model explainers wil
 
 
 # Model Explainer Example Derek LIME
+The LIME model explainer creates explanations for models which answer the question, "Why can I trust this model?" It does this by providing detailed breakdowns of each decision. Below is an example of using the LIME model explainer to analyze a sentiment analysis project on a group of newsgroup posts about religion.
 
+```python
+from __future__ import print_function
+import lime
+import sklearn
+import numpy as np
+import sklearn
+import sklearn.ensemble
+import sklearn.metrics
+
+
+from sklearn.datasets import fetch_20newsgroups # get dataset
+categories = ['alt.atheism', 'soc.religion.christian'] #filter by topic
+newsgroups_train = fetch_20newsgroups(subset='train', categories=categories) # divide into train and test groups
+newsgroups_test = fetch_20newsgroups(subset='test', categories=categories)
+class_names = ['atheism', 'christian']
+
+vectorizer = sklearn.feature_extraction.text.TfidfVectorizer(lowercase=False)
+train_vectors = vectorizer.fit_transform(newsgroups_train.data)
+test_vectors = vectorizer.transform(newsgroups_test.data)
+
+rf = sklearn.ensemble.RandomForestClassifier(n_estimators=500)
+rf.fit(train_vectors, newsgroups_train.target) #fit the model
+
+pred = rf.predict(test_vectors)
+print(sklearn.metrics.f1_score(newsgroups_test.target, pred, average='binary'))
+
+
+
+from lime import lime_text
+from sklearn.pipeline import make_pipeline
+c = make_pipeline(vectorizer, rf)
+
+print(c.predict_proba([newsgroups_test.data[0]]))
+
+from lime.lime_text import LimeTextExplainer
+explainer = LimeTextExplainer(class_names=class_names)
+
+idx = 84 # pick document ID
+exp = explainer.explain_instance(newsgroups_test.data[idx], c.predict_proba, num_features=6) # create explainer object
+print('Document id: %d' % idx)
+print('Probability(christian) =', c.predict_proba([newsgroups_test.data[idx]])[0,1]) # pull out information on the prediction
+print('True class: %s' % class_names[newsgroups_test.target[idx]])
+
+print(exp.as_list()) # list top 6 words that made the decision
+
+%matplotlib inline
+fig = exp.as_pyplot_figure() #shows a graph of the words with their weights
+
+exp.show_in_notebook(text=True) #show the probablitities of the prediction
+
+```
 
 
 # Model Explainer Example Tanner 
