@@ -93,7 +93,8 @@ print(exp.as_list()) # list top 6 words that made the decision
 fig = exp.as_pyplot_figure()
 exp.show_in_notebook(text=True)
 ```
-
+![figure](weights.png)
+![text](text_summary.png)
 
 # Model Explainer Example Tanner 
 
