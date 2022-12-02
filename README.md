@@ -38,7 +38,7 @@ Depending on the project that you are working on, different model explainers wil
 
 
 # Model Explainer Example Derek LIME
-The LIME model explainer creates explanations for models which answer the question, "Why can I trust this model?" It does this by providing detailed breakdowns of each decision. Below is an example of using the LIME model explainer to analyze a sentiment analysis project on a group of newsgroup posts about religion.
+The LIME (Local Interpretable Model-Agnostic) model explainer creates explanations for models which answer the question, "Why can I trust this model?" It does this by providing detailed breakdowns of each decision. Below is an example of using the LIME model explainer to analyze a sentiment analysis project on a group of newsgroup posts about religion.
 
 ```python
 from __future__ import print_function
@@ -65,9 +65,13 @@ rf.fit(train_vectors, newsgroups_train.target) #fit the model
 
 pred = rf.predict(test_vectors)
 print(sklearn.metrics.f1_score(newsgroups_test.target, pred, average='binary'))
+```
 
 
+This model has an F1 score of .91666. Rather than using the sklearn confusion matrix, we can look at what the model is doing much more closely for each decision. Below is an example of how to use the LIME model explainer to look at a local decision.
 
+
+```python
 from lime import lime_text
 from sklearn.pipeline import make_pipeline
 c = make_pipeline(vectorizer, rf)
@@ -85,11 +89,9 @@ print('True class: %s' % class_names[newsgroups_test.target[idx]])
 
 print(exp.as_list()) # list top 6 words that made the decision
 
-%matplotlib inline
-fig = exp.as_pyplot_figure() #shows a graph of the words with their weights
 
-exp.show_in_notebook(text=True) #show the probablitities of the prediction
-
+fig = exp.as_pyplot_figure()
+exp.show_in_notebook(text=True)
 ```
 
 
